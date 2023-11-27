@@ -28,7 +28,6 @@ def test_dark_theme_by_time_and_user_choice():
     # TODO переключите темную тему в зависимости от времени суток,
     #  но учтите что темная тема может быть включена вручную
 
-
     if dark_theme_enabled_by_user:
         is_dark_theme = True
     elif dark_theme_enabled_by_user is None:
@@ -38,7 +37,7 @@ def test_dark_theme_by_time_and_user_choice():
             is_dark_theme = False
     else:
         is_dark_theme = False
-
+    assert is_dark_theme is True
 
 
 def test_find_suitable_user():
@@ -59,7 +58,6 @@ def test_find_suitable_user():
     for i in users:
         if i['name'] == 'Olga':
             suitable_users = i
-
 
     assert suitable_users == {"name": "Olga", "age": 45}
 
@@ -94,6 +92,7 @@ def print_func_names(func, *args):
 
     print(result)
     return result
+
 
 def test_readable_function():
     open_browser(browser_name="Chrome")
